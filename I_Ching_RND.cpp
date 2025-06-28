@@ -549,14 +549,16 @@ struct _IChingRndAlgorithm : public _NT_algorithm {
 
 // --- Parameters array ---
 static const _NT_parameter parameters[] = {
-    { .name = "Clock In", .min = 1, .max = 28, .def = 1, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "IntSeqTrigIn", .min = 1, .max = 28, .def = 2, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "CV Out", .min = 1, .max = 28, .def = 13, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "Quant Out", .min = 1, .max = 28, .def = 14, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "IntSeq Out", .min = 1, .max = 28, .def = 15, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "Noise Out", .min = 1, .max = 28, .def = 16, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "Clock Thru Out", .min = 1, .max = 28, .def = 17, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-    { .name = "Clock Div Out", .min = 1, .max = 28, .def = 18, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
+    
+    NT_PARAMETER_CV_INPUT("Clock In", 1, 1)
+    NT_PARAMETER_CV_INPUT("IntSeqTrig In", 1, 2)
+    NT_PARAMETER_CV_OUTPUT("CV Out", 1, 13)
+    NT_PARAMETER_CV_OUTPUT("Quant Out", 1, 14)
+    NT_PARAMETER_CV_OUTPUT("IntSeq Out", 1, 15)
+    NT_PARAMETER_CV_OUTPUT("Noise Out", 1, 16)
+    NT_PARAMETER_CV_OUTPUT("Clock Thru Out", 1, 17)
+    NT_PARAMETER_CV_OUTPUT("Clock Div Out", 1, 18)
+   
     { .name = "Scale", .min = 0, .max = NUM_SCALES-1, .def = 0, .unit = kNT_unitEnum, .scaling = 0, .enumStrings = all_scale_names },
     { .name = "Root", .min = 0, .max = 11, .def = 0, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
     { .name = "Transpose", .min = -24, .max = 24, .def = 0, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
