@@ -817,7 +817,7 @@ bool draw(_NT_algorithm* self) {
 
 // --- Factory definition ---
 static const _NT_factory factory = {
-    .guid = NT_MULTICHAR('R','A','N','X'),
+    .guid = NT_MULTICHAR('F','M','I','X'),
     .name = "IChing Random",
    
     .description = "64 hexagram step sequencer (random, clocked)",
